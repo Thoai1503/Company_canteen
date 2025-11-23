@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import BootstrapClient from "@/components/BootstrapClient";
-import StoreProvider from "../StoreProvider";
+import StoreProvider from "../../StoreProvider";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -27,7 +27,7 @@ export default function UserLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <body className={`index-page`}>
+    <>
       <header
         id="header"
         className="header d-flex align-items-center sticky-top"
@@ -122,6 +122,6 @@ export default function UserLayout({
       </header>
       <main className="main">{children}</main>
       <Script src="/assets/js/main.js" strategy="afterInteractive" />
-    </body>
+    </>
   );
 }

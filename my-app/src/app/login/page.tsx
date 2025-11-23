@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Checkout from "../(user)/checkout/page";
+import Checkout from "../(protected)/(user)/checkout/page";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "@/lib/features/authSlice";
 import { AppDispatch, RootState } from "@/lib/store";

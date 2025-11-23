@@ -56,12 +56,11 @@ export default function RootLayout({
           />
         </head>
         <body className={`index-page`}>
-          <AuthInitializer>
-            <main className="main">
-              <BootstrapClient />
-              {children}
-            </main>
-          </AuthInitializer>
+          <main className="main">
+            <BootstrapClient />
+            {children}
+          </main>
+
           <Script src="/assets/js/main.js" strategy="afterInteractive" />
         </body>
       </html>
