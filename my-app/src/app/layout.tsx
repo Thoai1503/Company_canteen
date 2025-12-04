@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider>
-      <html lang="en">
+      <html lang="en" className="mdl-js">
         <head>
           <link rel="stylesheet" href="/assets/css/main.css" />
           <link

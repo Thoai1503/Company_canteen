@@ -3,9 +3,6 @@ import axios from "axios";
 const http = axios.create({
   baseURL: "http://localhost:8000/Thoai-pro-spring",
   withCredentials: true,
-  headers: {
-    "Content-Type": "application/json",
-  },
 });
 
 http.interceptors.request.use(

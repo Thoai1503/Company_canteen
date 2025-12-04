@@ -47,6 +47,7 @@ export const loginUser = createAsyncThunk(
       // Store token in localStorage
       if (typeof window !== "undefined") {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
       }
 
       window.location.pathname = "/";
@@ -135,9 +136,11 @@ export const verifyToken = createAsyncThunk(
       if (!response.data) {
         if (typeof window !== "undefined") {
           localStorage.removeItem("token");
+          localStorage.removeItem("user");
           window.location.pathname = "/login";
         }
         localStorage.removeItem("token");
+        localStorage.removeItem("user");
         return rejectWithValue("Token invalid");
       }
 
@@ -153,6 +156,7 @@ export const verifyToken = createAsyncThunk(
       };
     } catch (error: any) {
       localStorage.removeItem("token");
+      localStorage.removeItem("user");
       window.location.pathname = "/login";
       return rejectWithValue(error.message);
     }

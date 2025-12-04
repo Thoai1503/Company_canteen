@@ -1,7 +1,18 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ["electric-commercial.vercel.app", "www.fivebranches.edu"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "8000",
+        pathname: "/Thoai-pro-spring/upload/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

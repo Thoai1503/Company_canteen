@@ -8,7 +8,9 @@ export default function AdminLayout({
     <div className="d-flex">
       <Sidebar />
 
-      <div className="container mx-4 mt-3">{children}</div>
+      <div className="container mx-4 mt-3" style={{ height: "100vh" }}>
+        {children}
+      </div>
     </div>
   );
 }
